@@ -165,5 +165,6 @@ namespace Task_6
                 Console.WriteLine($"Середнє значення елементів у {st + 1} стовпчику - {sum}");
             }
         }
+
     }    
 }
