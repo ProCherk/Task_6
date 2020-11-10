@@ -140,14 +140,25 @@ namespace Task_6
 
         public void GetMassiveValue()
         {
-            //Функція отримання елементу масиву за його індексами
-            Console.Write("Введіть номер стовпчика: ");
+            //Функція отримання індексу масиву за його значенням
+            int count = 0;
+
+            Console.Write("Введіть елемент масиву ");
             int a = Convert.ToInt32(Console.ReadLine());
 
-            Console.Write("Введіть номер строки: ");
-            int b = Convert.ToInt32(Console.ReadLine());
-
-            Console.WriteLine($"Елемент масиву у {a} стовпчику і {b} стрічці - {mass[a, b]}");
+            for (int i = 0; i < m; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    if(a == mass[i, j])
+                    {
+                        Console.WriteLine($"Елемент масиву у {a} знаходиться на позиції - {i}, {j}");
+                        count++;
+                    }
+                }
+            }
+            if (count == 0)
+                Console.WriteLine($"Елементу {a} у масиві немає");
             Console.WriteLine();
         }
 
@@ -157,6 +168,7 @@ namespace Task_6
             double sum = 0;
             for (int st = 0; st < n; st++)
             {
+                sum = 0;
                 for (int i = 0; i < m; i++)
                 {
                     sum += mass[i, st];
@@ -165,6 +177,5 @@ namespace Task_6
                 Console.WriteLine($"Середнє значення елементів у {st + 1} стовпчику - {sum}");
             }
         }
-
     }    
 }
